@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 乐谱到音乐成品平台 Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">可打开测试的 MVP</p>
+        <h1>AI 乐谱到音乐成品平台</h1>
+        <p class="subtitle">上传一张谱，从识别校对、真人化演奏到自动编曲与导出，先用浏览器 Demo 跑通完整产品闭环。</p>
+      </div>
+      <button id="run-demo" class="primary">运行示例乐谱</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel upload-panel">
+        <h2>1. 上传 / 输入乐谱</h2>
+        <label class="drop-zone" for="score-file">
+          <input id="score-file" type="file" accept="image/*,.pdf,.musicxml,.xml" />
+          <span>选择图片、PDF 或 MusicXML</span>
+          <small>当前 Demo 使用内置样例模拟 OMR；接入服务后会显示真实识别结果。</small>
+        </label>
+        <div id="file-status" class="status">尚未选择文件。</div>
+      </section>
+
+      <section class="panel">
+        <h2>2. 识别校对</h2>
+        <div id="issues" class="issue-list empty">点击“运行示例乐谱”查看低置信度音符。</div>
+      </section>
+
+      <section class="panel wide">
+        <h2>3. 真人化演奏预览</h2>
+        <div id="piano-roll" class="piano-roll" aria-label="钢琴卷帘预览"></div>
+      </section>
+
+      <section class="panel wide">
+        <h2>4. 自动编曲与导出</h2>
+        <div id="tracks" class="tracks empty">等待生成编曲轨道。</div>
+        <div id="exports" class="exports"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
