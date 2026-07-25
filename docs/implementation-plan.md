@@ -57,9 +57,9 @@
 
 现在仓库包含一个不依赖前端框架的浏览器 Demo，可用于验证产品流程：
 
-1. 执行 `npm run build` 编译 TypeScript 音乐核心。
-2. 执行 `npm run start` 启动本地静态服务器。
-3. 在浏览器打开 `http://localhost:4173`。
-4. 点击“运行示例乐谱”，检查识别校对、真人化演奏预览、自动编曲轨道和导出格式。
+1. 执行 `npm run start`；脚本会先编译 TypeScript 音乐核心，再启动本地静态服务器。
+2. 在浏览器打开 `http://localhost:4173`。
+3. 点击“运行示例乐谱”，检查识别校对、真人化演奏预览、自动编曲轨道和导出格式。
+4. 如需命令行自动冒烟检查，执行 `npm run smoke`，它会确认首页、前端脚本和编译后的音乐核心模块都能通过本地服务器访问。
 
-这个 Demo 暂时用内置样例模拟 OMR 输出；上传控件已经预留，下一步可以把文件传给 OMR API，并用真实 MusicXML/JSON 替换内置样例。
+这个 Demo 暂时用内置样例模拟 OMR 输出；上传控件已经预留，下一步可以把文件传给 OMR API，并用真实 MusicXML/JSON 替换内置样例。若你看到 GitHub 提示 `docs/implementation-plan.md` 或 `package.json` 冲突，请保留本节的 `start`、`serve`、`smoke` 脚本说明，因为它们是打开测试版所需的入口。
